@@ -39,7 +39,7 @@ class UserAdmin(BaseUserAdmin):
             )
         }),
     )
-    
+
     # adding page
     add_fieldsets = (
         (None, {
@@ -47,8 +47,6 @@ class UserAdmin(BaseUserAdmin):
             'fields': ('email', 'password1', 'password2')
         }),
     )
-
-
 
 
 admin.site.register(models.User, UserAdmin)

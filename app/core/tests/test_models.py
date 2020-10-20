@@ -28,8 +28,8 @@ class ModelTests(TestCase):
     def test_new_user_invalid_email(self):
         """Test creating user with no email raises error"""
 
-        # assertRaises hace que todo lo que se ejecuta dentro de él debe generar
-        # un valor de error para que pase la prueba.
+        # assertRaises hace que todo lo que se ejecuta dentro de él debe
+        # generar un valor de error para que pase la prueba.
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user(None, 'test123')
 
