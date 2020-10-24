@@ -26,7 +26,9 @@ class TagViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
         return self.queryset.filter(user=self.request.user).order_by('-name')
 
 
-class IngredientViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
+class IngredientViewSet(viewsets.GenericViewSet,
+                        mixins.ListModelMixin,
+                        mixins.CreateModelMixin):
     """
     Manage ingredients in the database
     """
@@ -42,7 +44,6 @@ class IngredientViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
         """
         return self.queryset.filter(user=self.request.user).order_by('-name')
 
-    # class 59
     def perform_create(self, serializer):
         """
         Create a new ingredient
